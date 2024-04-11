@@ -1,0 +1,39 @@
+| (pipe): It lets you redirect the output of one command to another.
+
+sort: It is used to sort the values
+
+uniq: It is used to display the unique values from a list of given values
+
+whoami: It is used to display the current user’s username
+
+id: It is used to print real and effective user and group IDs
+
+lsof: It is used to display the list of all open files and the processes
+
+more: It is used to read a file, but it loads all the contents of the file at once
+
+less: It is also used to read the file but only loads a smaller part of the file at a time
+
+cut: It is used to cut the values based on delimiters
+
+tr: It is used to translate, squeeze, or delete characters
+
+wc: It is used to find the word count
+
+history: It is used to see the list of commands previous executed on the terminal
+
+df and du: It is used to see the disk space status
+
+ps: It is used to see the running processes snapshot at that moment.
+
+top: It is used to see the running processes continuously
+
+test: It is used to check file types and compares values
+
+kill: It is used to terminate the process manually
+
+nohup: It is used to keep the processes in a running state even if the user exits the terminal or shell. 
+
+dd: It is used to convert and copy files which are passed to it as arguments. 
+
+su: It allows the user to execute commands with another user’s privileges, which by default is a root user. 

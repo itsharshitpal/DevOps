@@ -1,0 +1,29 @@
+															Problem 
+														---------------
+														
+In this exercise, let’s use Linux commands like grep, awk, uniq, cat, sort, wc to do data analysis on the apache server’s access logs.
+Use logs.txt file
+
+Your customer Abhinav complained to you about his account being compromised. Let’s start the investigation and find out the truth.
+
+Q1 : Find out with how many unique IPs his account was accessed.
+
+ans: 9 different IPs.
+command:
+awk -F "," '$4 == "Abhinav" {print $3}' ./Downloads/AccessLogs.txt | sort -u | wc -l
+Or
+awk -F ", '/Abhinav/ {print $3}' ./Downloads/AccessLogs.txt | sort -u | wc -l
+-----------------
+Q2 : Print all those unique IPs in “Abhinav.txt” and use bulk IP to location website to find each IP’s location. From which countries other than India, his account was accessed?
+
+ans : His account was accessed from China and Hongkong.
+Command:
+awk -F "," '$4 == "Abhinav" {print $3}' ./Downloads/AccessLogs.txt | sort -u >> Abhinav.txt
+-----------------
+Q3 : How many times his account was accessed using an iPad, list all those IPs in file “iPad.txt” copy the text and use bulk IP to location website to find each IP’s location.
+
+ans : Command to get number of times his account was accessed from an iPad:
+awk -F "," '/iPad/ && /Abhinav/ {print $3}' ./Downloads/AccessLogs.txt | wc -l
+Command to print all IPs in 'iPad.txt':
+awk -F "," '/iPad/ && /Abhinav/ {print $3}' ./Downloads/AccessLogs.txt >> iPad.txt
+His account was accessed 9 times from an iPad, all from China
